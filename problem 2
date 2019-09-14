@@ -1,0 +1,26 @@
+using System;
+
+namespace Problem2
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int sum = 0;
+            int firstElement = 1;
+            int nextElement = 2; 
+            int w; 
+            while (nextElement < 4000000)
+            {
+                if (nextElement % 2 == 0)
+                {
+                    sum += nextElement;
+                }
+                w = nextElement;
+                nextElement = nextElement + firstElement;
+                firstElement = w;
+            } 
+            Console.WriteLine(sum);
+        }
+    }
+}
