@@ -6,42 +6,42 @@ namespace Problem36
     {
         public static void Main(string[] args)
         {
-            int bin = 0;
-            int k = 1;
+            int binary = 0;
+            int coeff = 1;
             int iReverse = 0;
-            int binReverse = 0;
-            int i1;
-            int bin1;
+            int binaryReverse = 0;
+            int iTemp;
+            int binaryTemp;
             int sum = 0;
             for (int i = 1; i < 1000000; i++)
             {
-                i1 = i;
-                while (i1 != 0)
+                iTemp = i;
+                while (iTemp != 0)
                 {
-                    bin += (i1 % 2) * k;
-                    k *= 10;
-                    i1 /= 2;                
+                    binary += (iTemp % 2) * coeff;
+                    coeff *= 10;
+                    iTemp /= 2;                
                 }
-                i1 = i;
-                while (i1 != 0)
+                iTemp = i;
+                while (iTemp != 0)
                 {
-                    iReverse = iReverse * 10 + (i1 % 10);
-                    i1 /= 10;
+                    iReverse = iReverse * 10 + (iTemp % 10);
+                    iTemp /= 10;
                 }
-                bin1 = bin;
-                while (bin1 != 0)
+                binaryTemp = binary;
+                while (binaryTemp != 0)
                 {
-                    binReverse = binReverse * 10 + (bin1 % 10);
-                    bin1 /= 10;
+                    binaryReverse = binaryReverse * 10 + (binaryTemp % 10);
+                    binaryTemp /= 10;
                 }
-                if (i == iReverse && bin == binReverse)
+                if (i == iReverse && binary == binaryReverse)
                 {
                    sum += i;
                 }
                    iReverse = 0;
-                   binReverse = 0;
-                   bin = 0;
-                   k = 1;  
+                   binaryReverse = 0;
+                   binary = 0;
+                   coeff = 1;  
             }
             Console.WriteLine(sum);
         }
